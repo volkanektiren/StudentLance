@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - StudentLance</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+    </header>
+
+    <div class="container-fluid vh-100" style="margin-top:100px">
+        <div class="rounded d-flex justify-content-center">
+            <div class="col-md-4 col-sm-12 shadow-lg p-5 bg-light">
+                <main role="main">
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

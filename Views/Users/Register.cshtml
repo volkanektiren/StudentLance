@@ -1,0 +1,65 @@
+﻿@model StudentLance.Models.DbModels.User.UserModel
+@using StudentLance.Enumerations;
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "../Partial/_UserOperationsLayout";
+}
+
+<diV class="text-center">
+    <h2>Register</h2>
+</diV>
+
+<form asp-action="Register">
+    <div class="p-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <span asp-validation-for="UserName" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="UserName" class="form-control form-control-lg" placeholder=" "/>
+            <label>@Html.DisplayNameFor(model => model.UserName)</label>
+        </div>
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="Password" class="form-control form-control-lg" placeholder=" "/>
+            <label>@Html.DisplayNameFor(model => model.Password)</label>
+        </div>
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="FirstName" class="form-control form-control-lg" placeholder=" "/>
+            <label>@Html.DisplayNameFor(model => model.FirstName)</label>
+        </div>
+        <span asp-validation-for="LastName" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="LastName" class="form-control" placeholder=" " />
+            <label>@Html.DisplayNameFor(model => model.LastName)</label>
+        </div>
+        <span asp-validation-for="BirthDate" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="BirthDate" class="form-control" />
+            <label>@Html.DisplayNameFor(model => model.BirthDate)</label>
+        </div>
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="Email" class="form-control" placeholder=" " />
+            <label>@Html.DisplayNameFor(model => model.Email)</label>
+        </div>
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="PhoneNumber" class="form-control" placeholder=" " />
+            <label>@Html.DisplayNameFor(model => model.PhoneNumber)</label>
+        </div>
+        <span asp-validation-for="UserType" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <select asp-for="UserType" asp-items="Html.GetEnumSelectList<UserType>()" class="form-control" >
+                  <option value="" disabled selected>Undefined</option>
+            </select>
+            <label>@Html.DisplayNameFor(model => model.UserType)</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="submit" value="Register" class="btn btn-primary" />
+        </div>
+    </div>
+
+</form>

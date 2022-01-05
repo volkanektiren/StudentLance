@@ -1,0 +1,32 @@
+﻿@model StudentLance.Models.ViewModels.User.UserLoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "../Partial/_UserOperationsLayout";
+}
+
+<diV class="text-center">
+    <h2>Login</h2>
+</diV>
+
+
+<form asp-action="Login">
+    <div class="p-4">
+        <span asp-validation-for="UserName" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="UserName" class="form-control form-control-lg" placeholder=" "/>
+            <label>@Html.DisplayNameFor(model => model.UserName)</label>
+        </div>
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <div class="form-floating mb-3">
+            <input asp-for="Password" class="form-control form-control-lg" placeholder=" "/>
+            <label>@Html.DisplayNameFor(model=> model.Password)</label>
+        </div>
+        <input type="submit" value="Login" class="btn btn-primary text-center mt-2" />
+        <p class="text-center mt-5">
+            Don't have an account?
+            <a asp-action="Register" type="button" class="btn btn-link">Register</a>
+        </p>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+</form>
